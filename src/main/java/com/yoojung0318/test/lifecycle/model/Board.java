@@ -1,4 +1,4 @@
-package com.yoojung0318.test.lesson01.model;
+package com.yoojung0318.test.lifecycle.model;
 
 // class 생성 -> 멤버변수로 사용
 public class Board {

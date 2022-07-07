@@ -1,4 +1,4 @@
-package com.yoojung0318.test.lesson01;
+package com.yoojung0318.test.lifecycle;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/lesson01/test01")
+@RequestMapping("/lifecycle/test01")
 public class Test02Controller {
 
 	
