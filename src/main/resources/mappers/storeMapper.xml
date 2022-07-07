@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 프로젝트 설정 , 사용할 data 정리, 2.쿼리수행 // [재료]-->
+
+<!--  mybatis xml dtd // mapper 쓸거니까  mapper 들어있는 걸로-->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <!-- 연결 성공 여부 확인 : ctrl누르고 주소 위에 커서  -->
+  <mapper namespace="com.yoojung0318.test.database.dao.StoreDAO">
+	
+	<select id="selectStoreList" resultType="com.yoojung0318.test.database.model.Store">
+		SELECT 
+			`id`
+			, `name`
+			, `phoneNumber`
+			, `address`
+			, `businessNumber`
+			, `introduce`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`store`
+	</select>	
+
+
+</mapper>
