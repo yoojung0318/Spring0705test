@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.yoojung0318.test.mybatis.dao.RealEstateDAO;
 import com.yoojung0318.test.mybatis.model.RealEstate;
 
+// bo역할 주문 -> 메뉴 레시피 제공
 //id가 5인 real estate 정보 전달
 
 	@Service
@@ -33,5 +34,22 @@ import com.yoojung0318.test.mybatis.model.RealEstate;
 			 return realEstateDAO.selectRealEstateByAreaPrice(area,price);
 			
 		}
+		
+		
+	/* insert 다루기 1. 객체로 insert 하기*/
+
+		
+			public int addRealEstateByObject(RealEstate realestate) {
+				
+				return realEstateDAO.insertRealEstateByObject(realestate);
+				
+			}
+		
+	/*insert 다루기 2.field로 insert 하기*/		
+			public int addRealEstate(String address, int area, String type, int price, int rentPrice) {
+			
+				return realEstateDAO.insertRealEstate( address, area, type, price, rentPrice);
+				
+			}		
 		
 	}

@@ -21,4 +21,17 @@ public interface RealEstateDAO {
 			@Param("area") int area
 			,@Param("price") int price);
 	
+
+	/* insert 다루기 1. 객체로 insert 하기*/
+	
+	//실행된 행의 개수를 리턴
+	public int insertRealEstate(
+			 @Param("address")String address
+			, @Param("area")int area
+			, @Param("type")String type
+			, @Param("price")int price
+			, @Param("rentPrice")int rentPrice);
+	
+	
+	public int insertRealEstateByObject(RealEstate realestate);
 }
