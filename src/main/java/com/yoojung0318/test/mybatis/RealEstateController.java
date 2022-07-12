@@ -71,10 +71,28 @@ public class RealEstateController {
 	// 입력 성공한 행의 수를 출력
 	@ResponseBody
 	@RequestMapping("/test02/02")
-	public String addRealEstate() {
+	public String addRealEstate(@RequestParam(value="realtorId", required=true) int realtorId) {
 		
-		int count = realEstateBO.addRealEstate("썅떼빌리버 오피스텔 814호", 45, "월세", 100000, 120);
-		return "삽입결과" + count;
+		int count = realEstateBO.addRealEstate(realtorId, "썅떼빌리버 오피스텔 814호", 45, "월세", 100000, 120);
+		return "삽입 결과 : " + count;
+	}
+	
+	/*update다루기*/
+	@ResponseBody
+	@RequestMapping("/test03/01")
+	public String updateRealEstate(){
+			//id가 24인 행의 type 전세, price 70000
+		int count = realEstateBO.updateRealEstate(22,"전세",7000);
+		return "수정 결과: " + count;
+	}	
+	/*delete 다루기*/
+	@ResponseBody
+	@RequestMapping("/test04/01")
+	public String deleteRealEstate(@RequestParam("id") int id) {
+		//parameter로 전달받은 id행 삭제
+		int count = realEstateBO.deleteRealEstate(id);
+		return "삭제결과:" + count;
+		
 	}
 }
 	

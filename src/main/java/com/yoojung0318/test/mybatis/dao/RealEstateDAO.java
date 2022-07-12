@@ -23,15 +23,22 @@ public interface RealEstateDAO {
 	
 
 	/* insert 다루기 1. 객체로 insert 하기*/
+	public int insertRealEstateByObject(RealEstate realestate);
 	
+	/* insert 다루기 2. 직접 insert*/
 	//실행된 행의 개수를 리턴
 	public int insertRealEstate(
-			 @Param("address")String address
-			, @Param("area")int area
-			, @Param("type")String type
-			, @Param("price")int price
-			, @Param("rentPrice")int rentPrice);
+			@Param("realtorId") int realtorId
+			,@Param("address") String address
+			,@Param("area") int area
+			,@Param("type") String type
+			,@Param("price") int price
+			,@Param("rentPrice") int rentPrice);
 	
-	
-	public int insertRealEstateByObject(RealEstate realestate);
+	public int updateRealEstate(
+			@Param("id") int id
+			,@Param("type") String type
+			,@Param("price") int price);
+
+	public int deleteRealEstate(@Param("id") int id);
 }

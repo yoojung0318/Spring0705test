@@ -46,10 +46,18 @@ import com.yoojung0318.test.mybatis.model.RealEstate;
 			}
 		
 	/*insert 다루기 2.field로 insert 하기*/		
-			public int addRealEstate(String address, int area, String type, int price, int rentPrice) {
-			
-				return realEstateDAO.insertRealEstate( address, area, type, price, rentPrice);
+			public int addRealEstate(int realtorId, String address, int area, String type, int price, int rentPrice) {
 				
-			}		
-		
+				return realEstateDAO.insertRealEstate(realtorId, address, area, type, price, rentPrice);
+			}
+	/*update 다루기*/
+			public int updateRealEstate(int id, String type, int price) {
+				return realEstateDAO.updateRealEstate(id, type, price);
+				
+			}
+			
+	/*delete 다루기*/	
+			public int deleteRealEstate(int id) {
+				return realEstateDAO.deleteRealEstate(id);
+			}
 	}
