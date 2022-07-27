@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yoojung0318.test.ajax.dao.BookingDAO">
+  
+  <select id="selectBookingList" resultType="com.yoojung0318.test.ajax.model.Booking">
+  	SELECT 
+  			`id`
+  			, `name`
+  			, `date`
+  			, `day`
+  			, `headcount`
+  			, `phoneNumber`
+  			, `state`
+  			, `createdAt`
+			, `updatedAt`
+  	FROM 
+  			`booking`		
+  
+  </select>
+  
+  <insert id="insertBookingList" parameterType="map">
+  
+  	INSERT INTO 
+  				`booking`
+  				(
+	  			`name`
+	  			, `date`
+	  			, `day`
+	  			, `headcount`
+	  			, `phoneNumber`
+	  			, `state`
+	  			, `createdAt`
+				, `updatedAt`			
+  				
+  				)
+ 				VALUES
+ 				(
+ 				 #{name}
+ 				 , #{date}
+ 				 , #{day}
+ 				 , #{headcount}
+ 				 , #{phoneNumber}
+ 				 , #{state}
+ 				 , now()
+ 				 , noww()
+ 				 	 
+ 				 )
+  				
+  	
+  </insert>
+  
+  </mapper>
