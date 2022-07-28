@@ -13,12 +13,15 @@ public class BookingBO {
 
 	@Autowired
 	private BookingDAO bookingDAO;
+	
 	// 예약 리스트 가져오기
 	public List<Booking> getBookingList() {
 		return bookingDAO.selectBookingList();	
 	}
 	
-	public int addBooking(String name
+	// 입력 내용 추가
+	public int addBooking(
+			String name
 			, String date
 			, int day
 			, int headcount
